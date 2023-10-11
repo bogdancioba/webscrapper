@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Web Scrapper</title>
+</head>
+<body>
+    <form id="scrapeForm">
+        <input type="text" name="url" placeholder="Enter URL to scrape">
+        <input type="submit" value="Scrape">
+    </form>
+    <div id="result"></div>
+
+    <script>
+       document.getElementById('scrapeForm').addEventListener('submit', async function(e) {
+    e.preventDefault();
+
+    const formData = new FormData(e.target);
+    const url = formData.get('url');
+    
+    console.log('Sending request to scrape:', url);
+
+    try {
+        const response = await fetch('/scrape', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify({ url: url })
+        });
+        
+        if (!response.ok) {
+            throw new Error(`HTTP error! Status: ${response.status}`);
+        }
+        
+        const articles = await response.json();
+        console.log(articles);
+
+        console.log('Received articles:', articles);
+
+        const articlesHTML = articles.map(article => `
+            <div class="article">
+                <h2>${article.title}</h2>
+                <p>${article.date}</p>
+                <p>${article.short_description}</p>
+                <p>${article.author}</p>
+                <p>${article.author_proffesion}</p>
+            </div>
+        `).join('');
+
+        document.getElementById('result').innerHTML = articlesHTML;
+
+    } catch (error) {
+        console.error('Error fetching articles:', error.message || error);
+    }
+});
+
+    </script>
+</body>
+</html>
