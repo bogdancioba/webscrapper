@@ -17,7 +17,7 @@
         "author_proffesion": "City Life Blogger",
         "linkURL": "https://wsa-test.vercel.app/blog/the-challenges-of-urban-living",
         "imgURL": "https://wsa-test.vercel.app/_next/image?url=%2F_next%2Fstatic%2Fmedia%2Furban.b1d13747.webp&w=3840&q=75",
-        "sentiment": "Neutral"
+        "sentiment": "Negative"
     },
     {
         "date": "September 14, 2023",
@@ -27,7 +27,7 @@
         "author_proffesion": "Seasonal Blogger",
         "linkURL": "https://wsa-test.vercel.app/blog/the-radiant-days-of-summer",
         "imgURL": "https://wsa-test.vercel.app/_next/image?url=%2F_next%2Fstatic%2Fmedia%2Fsummer.8f9285fa.webp&w=3840&q=75",
-        "sentiment": "Neutral"
+        "sentiment": "Positive"
     },
     {
         "date": "September 13, 2023",
@@ -37,7 +37,7 @@
         "author_proffesion": "Art Critic",
         "linkURL": "https://wsa-test.vercel.app/blog/neutral-observations-on-modern-art",
         "imgURL": "https://wsa-test.vercel.app/_next/image?url=%2F_next%2Fstatic%2Fmedia%2Fart.038e828f.webp&w=3840&q=75",
-        "sentiment": "Positive"
+        "sentiment": "Neutral"
     },
     {
         "date": "September 12, 2023",

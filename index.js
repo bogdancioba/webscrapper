@@ -21,21 +21,34 @@ function tokenize(text) {
     return text.toLowerCase().split(" ");
 }
 
-const positive_words = ["good", "great", "amazing", "love", "positive"];
-const negative_words = ["bad", "hate", "awful", "terrible", "negative"];
+const positive_words = ["good", "great", "amazing", "love", "positive", "happiness", "beautiful", "joyful", "joy", "delightful","pleasant"];
+const negative_words = ["bad", "hate", "awful", "terrible", "negative", "distress", "negatively", "disaster", "pollution"];
 
 function scoreSentiment(text) {
+    text = preprocess(text);
     let tokens = tokenize(text);
     let score = 0;
 
     for(let word of tokens) {
         if (positive_words.includes(word)) {
+            console.log(word);
+            console.log("\n");
             score += 1;
         } else if (negative_words.includes(word)) {
+            console.log(word);
+            console.log("\n");
             score -= 1;
         }
     }
     return score;
+}
+
+function preprocess(text) {
+    return text.replace(/[^a-zA-Z\s]/g, '').toLowerCase();
+}
+
+function tokenize(text) {
+    return text.split(/\s+/);
 }
 
 function classifySentiment(text) {
@@ -48,6 +61,7 @@ function classifySentiment(text) {
         return "Neutral";
     }
 }
+
 
 app.post('/scrape', async (req, res) => {
     try {
@@ -74,6 +88,7 @@ app.post('/scrape', async (req, res) => {
             const baseURL = "https://wsa-test.vercel.app";
             const date = $element.text().trim();
             const title = $element.parent().next().children().first().text().trim();
+            console.log(title);
             const short_description = $element.parent().next().children().next().text().trim();
             const author = $element.parent().next().next().children().children().first().text().trim();
             const author_proffesion = $element.parent().next().next().children().children().next().text().trim();

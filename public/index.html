@@ -6,81 +6,24 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Web Scrapper</title>
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500&display=swap" rel="stylesheet">
-    <style>
-        body {
-            font-family: 'Roboto', sans-serif;
-            background-color: #f6f7fb;
-            color: #333;
-            margin: 0;
-            padding: 0;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            flex-direction: column;
-        }
-
-        #scrapeForm {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            padding: 20px;
-            gap: 20px;
-        }
-
-        input[type="text"] {
-            padding: 10px 15px;
-            border: none;
-            border-radius: 5px;
-            width: 300px;
-        }
-
-        input[type="submit"], .download-button {
-            background-color: #007bff;
-            color: #fff;
-            border: none;
-            padding: 10px 20px;
-            border-radius: 5px;
-            cursor: pointer;
-            transition: background-color 0.2s;
-        }
-
-        input[type="submit"]:hover, .download-button:hover {
-            background-color: #0056b3;
-        }
-
-        .article {
-            background: #fff;
-            padding: 20px;
-            margin: 20px 15%;
-            border-radius: 8px;
-            box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.08);
-        }
-
-        .article a {
-            color: #007bff;
-            text-decoration: none;
-        }
-
-        .article a:hover {
-            text-decoration: underline;
-        }
-
-        .download {
-            display: none;
-            text-align: center;
-            margin: 40px 0;
-        }
-    </style>
+    <script src="https://cdn.tailwindcss.com"></script>
 </head>
 
-<body>
-    <form id="scrapeForm">
-        <input type="text" name="url" placeholder="Enter URL to scrape">
-        <input type="submit" value="Scrape">
-    </form>
-    <div id="result"></div>
-    <div class="download">
-        <a href="/download" download="articles.txt" class="download-button">Download Articles</a>
+<body class="font-roboto bg-f6f7fb text-gray-900 m-0">
+
+    <div class="flex flex-col items-center justify-center min-h-screen space-y-4">
+        <form id="scrapeForm" class="flex flex-col items-center p-5 gap-5 bg-white shadow-md rounded-md w-96">
+            <input type="text" name="url" placeholder="Enter URL to scrape" class="p-2 w-full border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-2 focus:ring-blue-500">
+            <input type="submit" value="Scrape" class="w-full bg-blue-500 text-white p-2 rounded-md cursor-pointer transition-colors hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-blue-500">
+        </form>
+
+        <div id="result" class="w-3/4 space-y-4">
+            <!-- here will be the articles -->
+        </div>
+    </div>
+
+    <div class="download hidden text-center mt-10">
+        <a href="/download" download="articles.txt" class="download-button inline-block bg-blue-500 text-white py-2 px-5 rounded-md cursor-pointer transition-colors hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-blue-500">Download Articles in JSON format</a>
     </div>
 
     <script>
@@ -106,20 +49,21 @@
         }
         
         const articles = await response.json();
-        console.log(articles);
-
-        console.log('Received articles:', articles);
 
         let articlesHTML = articles.map(article => `
-            <div class="article">
-                <h2>${article.title}</h2>
-                <p>${article.date}</p>
+            <div class="article bg-white p-5 my-4 rounded-md shadow-md space-y-4">
+                <h2 class="text-2xl font-bold">${article.title}</h2>
+                <p class="text-gray-600">${article.date}</p>
                 <p>${article.short_description}</p>
-                <p>${article.author}</p>
-                <p>${article.author_proffesion}</p>
-                <a href='${article.linkURL}'>link to this article</a><br>
-                <a href='${article.imgURL}'>photo of this article</a>
-                <p>${article.sentiment}</p>
+                <div class="flex justify-between">
+                    <p class="font-semibold">${article.author}</p>
+                    <p class="text-gray-500 italic">${article.author_proffesion}</p>
+                </div>
+                <div class="flex space-x-4">
+                    <a href='${article.linkURL}' class="text-blue-500 hover:underline">Link to Article</a>
+                    <a href='${article.imgURL}' class="text-blue-500 hover:underline">Photo of Article</a>
+                </div>
+                <span class="inline-block bg-blue-100 text-blue-700 py-1 px-3 rounded-full text-sm">${article.sentiment}</span>
             </div>
         `).join('');
 
