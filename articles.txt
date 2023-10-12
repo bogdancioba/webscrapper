@@ -1,0 +1,52 @@
+[
+    {
+        "date": "September 16, 2023",
+        "title": "The Joys of Gardening",
+        "short_description": "Explore the enriching world of gardening and discover its positive impact on mood and well-being.",
+        "author": "Alex Green",
+        "author_proffesion": "Gardening Enthusiast",
+        "linkURL": "https://wsa-test.vercel.app/blog/the-joys-of-gardening",
+        "imgURL": "https://wsa-test.vercel.app/_next/image?url=%2F_next%2Fstatic%2Fmedia%2Fgarden.8d6b6c5f.webp&w=3840&q=75",
+        "sentiment": "Positive"
+    },
+    {
+        "date": "September 15, 2023",
+        "title": "The Challenges of Urban Living",
+        "short_description": "A candid look at the challenges of urban living, with insights into coping strategies.",
+        "author": "Jamie Urbanite",
+        "author_proffesion": "City Life Blogger",
+        "linkURL": "https://wsa-test.vercel.app/blog/the-challenges-of-urban-living",
+        "imgURL": "https://wsa-test.vercel.app/_next/image?url=%2F_next%2Fstatic%2Fmedia%2Furban.b1d13747.webp&w=3840&q=75",
+        "sentiment": "Neutral"
+    },
+    {
+        "date": "September 14, 2023",
+        "title": "The Radiant Days of Summer",
+        "short_description": "Dive into the vibrant and joyful moments that the summer season brings to our lives.",
+        "author": "Sunny Ray",
+        "author_proffesion": "Seasonal Blogger",
+        "linkURL": "https://wsa-test.vercel.app/blog/the-radiant-days-of-summer",
+        "imgURL": "https://wsa-test.vercel.app/_next/image?url=%2F_next%2Fstatic%2Fmedia%2Fsummer.8f9285fa.webp&w=3840&q=75",
+        "sentiment": "Neutral"
+    },
+    {
+        "date": "September 13, 2023",
+        "title": "Neutral Observations on Modern Art",
+        "short_description": "An unbiased exploration of modern art, inviting readers to form their own opinions.",
+        "author": "Art Neutral",
+        "author_proffesion": "Art Critic",
+        "linkURL": "https://wsa-test.vercel.app/blog/neutral-observations-on-modern-art",
+        "imgURL": "https://wsa-test.vercel.app/_next/image?url=%2F_next%2Fstatic%2Fmedia%2Fart.038e828f.webp&w=3840&q=75",
+        "sentiment": "Positive"
+    },
+    {
+        "date": "September 12, 2023",
+        "title": "The Disappointing Reality of Junk Food",
+        "short_description": "A critical view of the fast-food industry, discussing its negative health and environmental impacts.",
+        "author": "Dr. Healthwise",
+        "author_proffesion": "Nutritionist",
+        "linkURL": "https://wsa-test.vercel.app/blog/the-disappointing-reality-of-junk-food",
+        "imgURL": "https://wsa-test.vercel.app/_next/image?url=%2F_next%2Fstatic%2Fmedia%2Fjunk-food.df597761.webp&w=3840&q=75",
+        "sentiment": "Negative"
+    }
+]

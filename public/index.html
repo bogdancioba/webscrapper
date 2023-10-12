@@ -39,7 +39,7 @@
 
         console.log('Received articles:', articles);
 
-        const articlesHTML = articles.map(article => `
+        let articlesHTML = articles.map(article => `
             <div class="article">
                 <h2>${article.title}</h2>
                 <p>${article.date}</p>
@@ -51,6 +51,12 @@
                 <p>${article.sentiment}</p>
             </div>
         `).join('');
+
+        articlesHTML += `
+            <div class="download">
+                <a href="/download" download="articles.txt">Download Articles</a>
+            </div>
+        `;
 
         document.getElementById('result').innerHTML = articlesHTML;
 

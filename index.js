@@ -4,6 +4,13 @@ const bodyParser = require('body-parser');
 const puppeteer = require('puppeteer');
 const path = require('path');
 
+const fs = require('fs');
+
+function saveToFile(filename, data) {
+    fs.writeFileSync(filename, JSON.stringify(data, null, 4));
+}
+
+
 const app = express();
 const PORT = 3000;
 
@@ -88,12 +95,20 @@ app.post('/scrape', async (req, res) => {
         }
 
         await browser.close();
+
+        saveToFile('articles.txt', articles);
+
         console.log('Sending Response:', articles);
         res.json(articles);
 
     } catch (error) {
         res.status(500).json({ error: 'Failed to scrape content.' });
     }
+});
+
+app.get('/download', (req, res) => {
+    const file = `${__dirname}/articles.txt`;
+    res.download(file);
 });
 
 app.listen(PORT, () => {
