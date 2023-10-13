@@ -31,12 +31,8 @@ function scoreSentiment(text) {
 
     for(let word of tokens) {
         if (positive_words.includes(word)) {
-            console.log(word);
-            console.log("\n");
             score += 1;
         } else if (negative_words.includes(word)) {
-            console.log(word);
-            console.log("\n");
             score -= 1;
         }
     }
@@ -74,7 +70,7 @@ app.post('/scrape', async (req, res) => {
         if (!browser) return res.send('Failed to launch the browser');
         const page = await browser.newPage();
         await page.goto(url);
-        await new Promise(resolve => setTimeout(resolve, 2000));
+        await new Promise(resolve => setTimeout(resolve, 500));
 
         const content = await page.content();
         const $ = cheerio.load(content);
@@ -87,8 +83,8 @@ app.post('/scrape', async (req, res) => {
 
             const baseURL = "https://wsa-test.vercel.app";
             const date = $element.text().trim();
+            const type_of_article = $element.next().text().trim();
             const title = $element.parent().next().children().first().text().trim();
-            console.log(title);
             const short_description = $element.parent().next().children().next().text().trim();
             const author = $element.parent().next().next().children().children().first().text().trim();
             const author_proffesion = $element.parent().next().next().children().children().next().text().trim();
@@ -98,22 +94,41 @@ app.post('/scrape', async (req, res) => {
             const imgURL = baseURL + img.attr('src');
 
 
-            await page.goto(linkURL);
-            // iau tot de pe a doua pagina
-            const textFromSecondPage = await page.$eval('div', el => el.textContent);
-            //console.log(textFromSecondPage);
-            //console.log('\n');
-            //console.log('\n');
+            await page.goto(linkURL, { timeout: 2000 });
+
+            const textFromSecondPage = await page.evaluate((type_of_article) => {
+
+                let divs = Array.from(document.querySelectorAll('div'));
+                
+
+                divs = divs.filter(div => {
+
+                    if(div.querySelector('img')) return false;
+                    
+
+                    if(div.textContent.includes(type_of_article)) return false;
+                    
+
+                    if(div.textContent.includes('Back to Articles')) return false;
+                
+                    return true;
+                });
+                
+
+                return divs.map(div => div.innerText.trim().replace(/\n+/g, ' ')).join(' ').trim();
+            }, type_of_article);
+            
+            const wordCount = textFromSecondPage.split(/\s+/).filter(Boolean).length;
             const sentiment = classifySentiment(textFromSecondPage);
 
-            articles.push({ date, title, short_description, author, author_proffesion, linkURL, imgURL, sentiment });
+            articles.push({ date, title, short_description, author, author_proffesion, linkURL, imgURL, sentiment , type_of_article, wordCount, textFromSecondPage});
         }
 
         await browser.close();
 
         saveToFile('articles.txt', articles);
 
-        console.log('Sending Response:', articles);
+        //console.log('Sending Response:', articles);
         res.json(articles);
 
     } catch (error) {

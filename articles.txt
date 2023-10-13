@@ -7,7 +7,10 @@
         "author_proffesion": "Gardening Enthusiast",
         "linkURL": "https://wsa-test.vercel.app/blog/the-joys-of-gardening",
         "imgURL": "https://wsa-test.vercel.app/_next/image?url=%2F_next%2Fstatic%2Fmedia%2Fgarden.8d6b6c5f.webp&w=3840&q=75",
-        "sentiment": "Positive"
+        "sentiment": "Positive",
+        "type_of_article": "Lifestyle",
+        "wordCount": 381,
+        "textFromSecondPage": "The Joys of Gardening Discover the Blissful Moments in Gardening Gardening is indeed a joyful and rewarding hobby. It is not just an activity but a form of art that brings happiness and a positive vibe to your surroundings. Let's delve into the serene world of gardening and the plethora of benefits it brings along. The Amazing Benefits of Gardening Positive Mood: Surrounding yourself with beautiful flowers and plants instantly uplifts your mood. The vibrant colors and enchanting fragrances work wonders in driving away negative energies. Health Benefits: Engaging in gardening promotes physical health as it involves various activities like digging, planting, and watering. Connection with Nature: Gardening fosters a deep connection with nature, offering a sense of satisfaction and peace. Tips for Beginner Gardeners If you are a newbie in the gardening world, here are some simple yet effective tips to get you started: Start with Easy-to-Grow Plants: Opt for plants that are easy to grow and maintain. Some great choices include marigolds, sunflowers, and tomatoes. Proper Watering: Ensure your plants receive adequate water, but avoid overwatering to prevent root rot. Pest Control: Learn about organic pest control methods to protect your plants from harmful pests. Discover the Blissful Moments in Gardening Gardening is indeed a joyful and rewarding hobby. It is not just an activity but a form of art that brings happiness and a positive vibe to your surroundings. Let's delve into the serene world of gardening and the plethora of benefits it brings along. The Amazing Benefits of Gardening Tips for Beginner Gardeners If you are a newbie in the gardening world, here are some simple yet effective tips to get you started: Start with Easy-to-Grow Plants: Opt for plants that are easy to grow and maintain. Some great choices include marigolds, sunflowers, and tomatoes. Proper Watering: Ensure your plants receive adequate water, but avoid overwatering to prevent root rot. Pest Control: Learn about organic pest control methods to protect your plants from harmful pests. Start with Easy-to-Grow Plants: Opt for plants that are easy to grow and maintain. Some great choices include marigolds, sunflowers, and tomatoes. Proper Watering: Ensure your plants receive adequate water, but avoid overwatering to prevent root rot. Pest Control: Learn about organic pest control methods to protect your plants from harmful pests."
     },
     {
         "date": "September 15, 2023",
@@ -17,7 +20,10 @@
         "author_proffesion": "City Life Blogger",
         "linkURL": "https://wsa-test.vercel.app/blog/the-challenges-of-urban-living",
         "imgURL": "https://wsa-test.vercel.app/_next/image?url=%2F_next%2Fstatic%2Fmedia%2Furban.b1d13747.webp&w=3840&q=75",
-        "sentiment": "Negative"
+        "sentiment": "Negative",
+        "type_of_article": "Urban Life",
+        "wordCount": 247,
+        "textFromSecondPage": "The Challenges of Urban Living Navigating the Urban Jungle Living in a bustling city comes with its own set of challenges. The continuous hustle and bustle can sometimes be overwhelming, offering both incredible opportunities and stiff competition. Let's take a closer look at the not-so-rosy aspects of urban life. The Downsides of City Living Noise Pollution: The constant noise from traffic and construction sites can be a source of distress. High Cost of Living: Urban areas often come with a hefty price tag, including high rents and expensive amenities. Pollution: Cities are often characterized by high levels of pollution, which can negatively affect your health and well-being. Coping Strategies for Urbanites Despite the challenges, there are ways to cope with the stresses of city life: Creating a Quiet Sanctuary: Make your home a quiet and peaceful sanctuary away from the noise and chaos. Community Engagement: Engage with your local community to foster relationships and build support systems. Finding Green Spaces: Make an effort to find and spend time in green spaces to reconnect with nature and find moments of calm. Navigating the Urban Jungle Living in a bustling city comes with its own set of challenges. The continuous hustle and bustle can sometimes be overwhelming, offering both incredible opportunities and stiff competition. Let's take a closer look at the not-so-rosy aspects of urban life. The Downsides of City Living Coping Strategies for Urbanites Despite the challenges, there are ways to cope with the stresses of city life:"
     },
     {
         "date": "September 14, 2023",
@@ -27,7 +33,10 @@
         "author_proffesion": "Seasonal Blogger",
         "linkURL": "https://wsa-test.vercel.app/blog/the-radiant-days-of-summer",
         "imgURL": "https://wsa-test.vercel.app/_next/image?url=%2F_next%2Fstatic%2Fmedia%2Fsummer.8f9285fa.webp&w=3840&q=75",
-        "sentiment": "Positive"
+        "sentiment": "Positive",
+        "type_of_article": "Seasons",
+        "wordCount": 251,
+        "textFromSecondPage": "The Radiant Days of Summer Embracing the Golden Rays Summer is a season full of vibrant and joyful moments. It is the time of year where everything comes alive, showcasing the beauty of nature in its fullest bloom. Let's appreciate the warmth and brightness that summer showers upon us. Beautiful Summer Mornings Imagine waking up to a bright morning, with a chorus of birds singing and the fresh scent of blooming flowers. It's the perfect time to enjoy outdoor activities and bask in the delightful weather. Summer Evenings The evenings are just as magnificent, with golden sunsets painting the sky and a pleasant breeze to cool down the day. Summer is undoubtedly a time of wonder and happiness, a season to cherish and embrace with a joyful heart. Embracing the Golden Rays Summer is a season full of vibrant and joyful moments. It is the time of year where everything comes alive, showcasing the beauty of nature in its fullest bloom. Let's appreciate the warmth and brightness that summer showers upon us. Beautiful Summer Mornings Imagine waking up to a bright morning, with a chorus of birds singing and the fresh scent of blooming flowers. It's the perfect time to enjoy outdoor activities and bask in the delightful weather. Summer Evenings The evenings are just as magnificent, with golden sunsets painting the sky and a pleasant breeze to cool down the day. Summer is undoubtedly a time of wonder and happiness, a season to cherish and embrace with a joyful heart."
     },
     {
         "date": "September 13, 2023",
@@ -37,7 +46,10 @@
         "author_proffesion": "Art Critic",
         "linkURL": "https://wsa-test.vercel.app/blog/neutral-observations-on-modern-art",
         "imgURL": "https://wsa-test.vercel.app/_next/image?url=%2F_next%2Fstatic%2Fmedia%2Fart.038e828f.webp&w=3840&q=75",
-        "sentiment": "Neutral"
+        "sentiment": "Neutral",
+        "type_of_article": "Art",
+        "wordCount": 116,
+        "textFromSecondPage": "Modern art is a vast and diverse field, encompassing a wide variety of styles, techniques, and themes. It is neither good nor bad; it just is. Let's explore this world without the lenses of prejudice. Different Perspectives Different people can have vastly different reactions to the same piece of art; what is perceived as a masterpiece by one might be seen as nonsensical by another. It is essential to approach modern art with an open mind. The essence of modern art lies in its ability to provoke thought, to challenge established norms, and to encourage viewers to see the world from new and different perspectives. It neither seeks approval nor disapproval, standing firm in its neutrality."
     },
     {
         "date": "September 12, 2023",
@@ -47,6 +59,9 @@
         "author_proffesion": "Nutritionist",
         "linkURL": "https://wsa-test.vercel.app/blog/the-disappointing-reality-of-junk-food",
         "imgURL": "https://wsa-test.vercel.app/_next/image?url=%2F_next%2Fstatic%2Fmedia%2Fjunk-food.df597761.webp&w=3840&q=75",
-        "sentiment": "Negative"
+        "sentiment": "Negative",
+        "type_of_article": "Health",
+        "wordCount": 122,
+        "textFromSecondPage": "The Disappointing Reality of Junk Food The Downside of Fast Food In today's fast-paced world, junk food has become a go-to option for many. Despite its convenience and taste, it comes with a plethora of negative effects on our health. Let's delve into why we should avoid falling into the trap of fast-food consumption. Regular consumption of fast food can lead to numerous health issues, including obesity, heart disease, and diabetes. The high levels of sugar, salt, and unhealthy fats are a recipe for disaster. Environmental Impact Besides health issues, the fast-food industry also has a significant negative impact on the environment. The massive use of plastic and non-biodegradable materials contributes to pollution and waste, harming our planet in the long run."
     }
 ]
