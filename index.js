@@ -66,7 +66,7 @@ app.post('/scrape', async (req, res) => {
             return res.send('URL is required.');
         }
 
-        const browser = await puppeteer.launch().catch(error => console.error("Failed to launch browser:", error));
+        const browser = await puppeteer.launch({ headless: "new" }).catch(error => console.error("Failed to launch browser:", error));
         if (!browser) return res.send('Failed to launch the browser');
         const page = await browser.newPage();
         await page.goto(url);

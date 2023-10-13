@@ -87,77 +87,73 @@
 
 
         document.getElementById('result').innerHTML = articlesHTML;
-
         document.querySelector('.download').style.display = 'block';
         document.getElementById('searchFilterSection').classList.remove('hidden');
-
         document.getElementById('searchInput').addEventListener('input', function() {
-    const keyword = this.value.toLowerCase();
-    const articles = document.querySelectorAll('.article');
-    articles.forEach(article => {
-        const textContent = article.innerText.toLowerCase();
-        if (textContent.includes(keyword)) {
-            article.style.display = 'block';
-        } else {
-            article.style.display = 'none';
-        }
-    });
-});
-
-document.getElementById('sentimentFilter').addEventListener('change', function() {
-    const sentiment = this.value;
-    const articles = document.querySelectorAll('.article');
-    articles.forEach(article => {
-        const articleSentiment = article.querySelector('.inline-block.bg-blue-100').innerText.toLowerCase();
-        if (sentiment === 'all' || sentiment === articleSentiment) {
-            article.style.display = 'block';
-        } else {
-            article.style.display = 'none';
-        }
-    });
-});
-
-        setTimeout(() => {
-    const upvotes = document.querySelectorAll('.upvote');
-    const downvotes = document.querySelectorAll('.downvote');
-
-    upvotes.forEach(upvote => {
-        upvote.addEventListener('click', function() {
-            if (this.getAttribute("style") === "color: green;") {
-                this.removeAttribute("style");
+        const keyword = this.value.toLowerCase();
+        const articles = document.querySelectorAll('.article');
+        articles.forEach(article => {
+            const textContent = article.innerText.toLowerCase();
+            if (textContent.includes(keyword)) {
+                article.style.display = 'block';
             } else {
-                this.style.color = 'green';
-            }
-
-            const siblingDownvote = this.nextElementSibling;
-            if (siblingDownvote && siblingDownvote.classList.contains('downvote')) {
-                siblingDownvote.removeAttribute("style");
+                article.style.display = 'none';
             }
         });
     });
 
-    downvotes.forEach(downvote => {
-        downvote.addEventListener('click', function() {
-            if (this.getAttribute("style") === "color: red;") {
-                this.removeAttribute("style");
+    document.getElementById('sentimentFilter').addEventListener('change', function() {
+        const sentiment = this.value;
+        const articles = document.querySelectorAll('.article');
+        articles.forEach(article => {
+            const articleSentiment = article.querySelector('.inline-block.bg-blue-100').innerText.toLowerCase();
+            if (sentiment === 'all' || sentiment === articleSentiment) {
+                article.style.display = 'block';
             } else {
-                this.style.color = 'red';
-            }
-
-            const siblingUpvote = this.previousElementSibling;
-            if (siblingUpvote && siblingUpvote.classList.contains('upvote')) {
-                siblingUpvote.removeAttribute("style");
+                article.style.display = 'none';
             }
         });
     });
-}, 0);
 
+    setTimeout(() => {
+        const upvotes = document.querySelectorAll('.upvote');
+        const downvotes = document.querySelectorAll('.downvote');
 
+        upvotes.forEach(upvote => {
+            upvote.addEventListener('click', function() {
+                if (this.getAttribute("style") === "color: green;") {
+                    this.removeAttribute("style");
+                } else {
+                    this.style.color = 'green';
+                }
 
-    } catch (error) {
-        console.error('Error fetching articles:', error.message || error);
-    }
-});
+                const siblingDownvote = this.nextElementSibling;
+                if (siblingDownvote && siblingDownvote.classList.contains('downvote')) {
+                    siblingDownvote.removeAttribute("style");
+                }
+            });
+        });
+
+        downvotes.forEach(downvote => {
+            downvote.addEventListener('click', function() {
+                if (this.getAttribute("style") === "color: red;") {
+                    this.removeAttribute("style");
+                } else {
+                    this.style.color = 'red';
+                }
+
+                const siblingUpvote = this.previousElementSibling;
+                if (siblingUpvote && siblingUpvote.classList.contains('upvote')) {
+                    siblingUpvote.removeAttribute("style");
+                }
+            });
+        });
+    }, 0);
+
+        } catch (error) {
+            console.error('Error fetching articles:', error.message || error);
+        }
+    });
 
     </script>
 </body>
