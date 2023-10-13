@@ -43,8 +43,6 @@
 
     const formData = new FormData(e.target);
     const url = formData.get('url');
-    
-    //console.log('Sending request to scrape:', url);
 
     try {
         const response = await fetch('/scrape', {

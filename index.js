@@ -81,7 +81,6 @@ app.post('/scrape', async (req, res) => {
         for (let element of articleElements) {
             const $element = $(element);
 
-            const baseURL = "https://wsa-test.vercel.app";
             const date = $element.text().trim();
             const type_of_article = $element.next().text().trim();
             const title = $element.parent().next().children().first().text().trim();
@@ -89,9 +88,9 @@ app.post('/scrape', async (req, res) => {
             const author = $element.parent().next().next().children().children().first().text().trim();
             const author_proffesion = $element.parent().next().next().children().children().next().text().trim();
             const link = $element.parent().next().find('a').first();
-            const linkURL = baseURL + link.attr('href');
+            const linkURL = url + link.attr('href');
             const img = $(element).parent().parent().parent().find('a').find('img');
-            const imgURL = baseURL + img.attr('src');
+            const imgURL = url + img.attr('src');
 
 
             await page.goto(linkURL, { timeout: 2000 });
@@ -128,7 +127,6 @@ app.post('/scrape', async (req, res) => {
 
         saveToFile('articles.txt', articles);
 
-        //console.log('Sending Response:', articles);
         res.json(articles);
 
     } catch (error) {
